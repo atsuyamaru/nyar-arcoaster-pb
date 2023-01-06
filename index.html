@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- Global Container -->
-    <div class="relative overflow-hidden bg-white">
+    <section class="relative overflow-hidden bg-white">
       <!-- Header&Main Container -->
       <div class="mx-auto max-w-7xl">
         <!-- White Area overdraws Main Image -->
@@ -242,7 +242,31 @@
           alt=""
         />
       </div>
-    </div>
-    <!-- Header&Main Ends Here. -->
+    </section>
+    <!-- Movie Section -->
+    <section class="bg-slate-800 p-16 flex justify-center items-center">
+      <!-- for PC size -->
+      <iframe
+        class="hidden md:block"
+        width="780"
+        height="420"
+        src="https://www.youtube.com/embed/_mVYOWY5z4w"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      <!-- for mobile size -->
+      <iframe
+        class="md:hidden"
+        width="440"
+        height="240"
+        src="https://www.youtube.com/embed/_mVYOWY5z4w"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </section>
   </body>
 </html>
