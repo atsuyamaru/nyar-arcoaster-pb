@@ -8,6 +8,121 @@
     <title>ARコースター "PLANET BOOTH" 特設サイト</title>
   </head>
   <body>
+    <!-- SNIPCART testcode -->
+    <script>
+      window.SnipcartSettings = {
+        publicApiKey:
+          "NmMzMTA4OTUtYTAzZS00YjU2LWI0ZGMtZmUxMWQ4Y2FiNzllNjM3MjUyNDQ0NTU3NzI4MTM4",
+        loadStrategy: "on-user-interaction",
+      };
+
+      (function () {
+        var c, d;
+        (d = (c = window.SnipcartSettings).version) != null ||
+          (c.version = "3.0");
+        var s, S;
+        (S = (s = window.SnipcartSettings).timeoutDuration) != null ||
+          (s.timeoutDuration = 2750);
+        var l, p;
+        (p = (l = window.SnipcartSettings).domain) != null ||
+          (l.domain = "cdn.snipcart.com");
+        var w, u;
+        (u = (w = window.SnipcartSettings).protocol) != null ||
+          (w.protocol = "https");
+        var m, g;
+        (g = (m = window.SnipcartSettings).loadCSS) != null || (m.loadCSS = !0);
+        var y =
+            window.SnipcartSettings.version.includes("v3.0.0-ci") ||
+            (window.SnipcartSettings.version != "3.0" &&
+              window.SnipcartSettings.version.localeCompare("3.4.0", void 0, {
+                numeric: !0,
+                sensitivity: "base",
+              }) === -1),
+          f = ["focus", "mouseover", "touchmove", "scroll", "keydown"];
+        window.LoadSnipcart = o;
+        document.readyState === "loading"
+          ? document.addEventListener("DOMContentLoaded", r)
+          : r();
+        function r() {
+          window.SnipcartSettings.loadStrategy
+            ? window.SnipcartSettings.loadStrategy === "on-user-interaction" &&
+              (f.forEach(function (t) {
+                return document.addEventListener(t, o);
+              }),
+              setTimeout(o, window.SnipcartSettings.timeoutDuration))
+            : o();
+        }
+        var a = !1;
+        function o() {
+          if (a) return;
+          a = !0;
+          let t = document.getElementsByTagName("head")[0],
+            n = document.querySelector("#snipcart"),
+            i = document.querySelector(
+              'src[src^="'
+                .concat(window.SnipcartSettings.protocol, "://")
+                .concat(
+                  window.SnipcartSettings.domain,
+                  '"][src$="snipcart.js"]'
+                )
+            ),
+            e = document.querySelector(
+              'link[href^="'
+                .concat(window.SnipcartSettings.protocol, "://")
+                .concat(
+                  window.SnipcartSettings.domain,
+                  '"][href$="snipcart.css"]'
+                )
+            );
+          n ||
+            ((n = document.createElement("div")),
+            (n.id = "snipcart"),
+            n.setAttribute("hidden", "true"),
+            document.body.appendChild(n)),
+            h(n),
+            i ||
+              ((i = document.createElement("script")),
+              (i.src = ""
+                .concat(window.SnipcartSettings.protocol, "://")
+                .concat(window.SnipcartSettings.domain, "/themes/v")
+                .concat(
+                  window.SnipcartSettings.version,
+                  "/default/snipcart.js"
+                )),
+              (i.async = !0),
+              t.appendChild(i)),
+            !e &&
+              window.SnipcartSettings.loadCSS &&
+              ((e = document.createElement("link")),
+              (e.rel = "stylesheet"),
+              (e.type = "text/css"),
+              (e.href = ""
+                .concat(window.SnipcartSettings.protocol, "://")
+                .concat(window.SnipcartSettings.domain, "/themes/v")
+                .concat(
+                  window.SnipcartSettings.version,
+                  "/default/snipcart.css"
+                )),
+              t.prepend(e)),
+            f.forEach(function (v) {
+              return document.removeEventListener(v, o);
+            });
+        }
+        function h(t) {
+          !y ||
+            ((t.dataset.apiKey = window.SnipcartSettings.publicApiKey),
+            window.SnipcartSettings.addProductBehavior &&
+              (t.dataset.configAddProductBehavior =
+                window.SnipcartSettings.addProductBehavior),
+            window.SnipcartSettings.modalStyle &&
+              (t.dataset.configModalStyle = window.SnipcartSettings.modalStyle),
+            window.SnipcartSettings.currency &&
+              (t.dataset.currency = window.SnipcartSettings.currency),
+            window.SnipcartSettings.templatesUrl &&
+              (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
+        }
+      })();
+    </script>
     <!-- Global Container -->
     <section class="relative overflow-hidden bg-white">
       <!-- Header&Main Container -->
@@ -115,7 +230,7 @@
                   >
 
                   <a
-                    href="#"
+                    href="#purchase"
                     class="font-medium text-indigo-600 hover:text-indigo-500"
                     >商品購入</a
                   >
@@ -972,5 +1087,141 @@
         </div>
       </div>
     </section>
+    <!-- Product BuyItem Section -->
+    <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+    <section id="purchase" class="bg-white">
+      <div
+        class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+      >
+        <!-- Product details -->
+        <div class="lg:max-w-lg lg:self-end">
+          <div class="mt-4">
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+            >
+              ARコースター® "PLANET BOOTH"
+            </h2>
+          </div>
+
+          <section aria-labelledby="information-heading" class="mt-4">
+            <h2 id="information-heading" class="sr-only">
+              Product information
+            </h2>
+
+            <div class="flex items-center">
+              <p class="text-lg text-gray-900 sm:text-xl">$220</p>
+            </div>
+
+            <div class="mt-4 space-y-6">
+              <p class="text-base text-gray-500">
+                Don&#039;t compromise on snack-carrying capacity with this
+                lightweight and spacious bag. The drawstring top keeps all your
+                favorite chips, crisps, fries, biscuits, crackers, and cookies
+                secure.
+              </p>
+            </div>
+
+            <div class="mt-6 flex items-center">
+              <!-- Heroicon name: mini/check -->
+              <svg
+                class="h-5 w-5 flex-shrink-0 text-green-500"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <p class="ml-2 text-sm text-gray-500">
+                在庫あり。製品完成次第お届け
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Product image -->
+        <div class="lg:col-start-2 lg:row-span-2 lg:self-center">
+          <div
+            class="scale-75 aspect-w-1 aspect-h-1 overflow-hidden rounded-lg"
+          >
+            <img
+              src="./images/AR-markar_800.png"
+              alt="Model wearing light green backpack with black canvas straps and front zipper pouch."
+              class="h-full w-full object-cover object-center"
+            />
+          </div>
+        </div>
+
+        <!-- Product form -->
+        <div
+          class="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start"
+        >
+          <section aria-labelledby="options-heading">
+            <h2 id="options-heading" class="sr-only">Product options</h2>
+
+            <form>
+              <div class="mt-10">
+                <button
+                  type="submit"
+                  class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                >
+                  カートに追加する
+                </button>
+              </div>
+              <div
+                class="mt-6 text-center group inline-flex text-base font-medium"
+              >
+                <!-- Heroicon name: outline/shield-check -->
+                <svg
+                  class="mr-2 h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                  />
+                </svg>
+                <span class="text-gray-500">Lifetime Guarantee</span>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- SnipCart BuyItem Test -->
+    <button
+      class="snipcart-add-item"
+      data-item-id="starry-night"
+      data-item-price="79.99"
+      data-item-description="High-quality replica of The Starry Night by the Dutch post-impressionist painter Vincent van Gogh."
+      data-item-image="/assets/images/starry-night.jpg"
+      data-item-name="The Starry Night"
+    >
+      Add to cart
+    </button>
   </body>
 </html>
