@@ -21,11 +21,6 @@
         loadStrategy: "on-user-interaction",
         currency: "JPY",
       };
-      /* サンクスページへのリダイレクト */
-      Snipcart.execute("bind", "order.completed", function (order) {
-        var url = "/thanks?order=" + order.token;
-        window.location.href = url;
-      });
 
       (function () {
         var c, d;
@@ -133,6 +128,11 @@
               (t.dataset.templatesUrl = window.SnipcartSettings.templatesUrl));
         }
       })();
+      /* サンクスページへのリダイレクト */
+      Snipcart.execute("bind", "order.completed", function (order) {
+        var url = "/thanks?order=" + order.token;
+        window.location.href = url;
+      });
     </script>
     <!-- Global Container -->
     <section class="relative overflow-hidden bg-white">
