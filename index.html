@@ -21,6 +21,11 @@
         loadStrategy: "on-user-interaction",
         currency: "JPY",
       };
+      /* サンクスページへのリダイレクト */
+      Snipcart.execute("bind", "order.completed", function (order) {
+        var url = "/thanks?order=" + order.token;
+        window.location.href = url;
+      });
 
       (function () {
         var c, d;
